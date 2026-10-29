@@ -1,0 +1,53 @@
+NOTICE
+======
+
+本作品（aigc-humanizer-skill）以 CC BY-NC-SA 4.0 许可发布。
+
+一、上游来源
+
+本仓库的去痕规则、提示词模板与分段流水线，改编自：
+
+    项目：BypassAIGC（AI 学术写作助手）
+    作者：chi111i
+    地址：https://github.com/chi111i/BypassAIGC
+    许可：Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+    许可全文：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+具体改编自上游以下内容：
+  - backend/app/services/ai_service.py 中的 _HUMANIZER_REWRITE_RULES、
+    _ACADEMIC_OUTPUT_RULES、get_default_polish_prompt()、
+    get_default_enhance_prompt()、get_emotion_polish_prompt()、
+    get_compression_prompt()、_paragraph_task_suffix()
+  - 同文件中的 split_text_into_segments()、count_text_length() 分段与计数逻辑
+  - 同文件中的 SYSTEM_PROMPT_REVISION = "2026-08-28-humanizer" 对应的规则版本
+
+二、本仓库新增的内容
+
+  - references/humanizer-rules.md：把上游的规则清单展开为 18 类可执行条目，
+    每条补充"为什么像 AI"与"怎么改"，并加入改写示例
+  - scripts/aigc_pipeline.py：split / scan / check / writeback 四个子命令，
+    含套话扫描、保护片段提取、句长变异系数、docx 写回
+  - scripts/check_tex.py：LaTeX 结构校验（环境配对、引用闭环、括号平衡、
+    公式定界、数字清单）
+  - evals/cases.md：改写力度校准样例
+  - README.md 与 SKILL.md 中的操作流程
+
+三、许可说明
+
+依据 CC BY-NC-SA 4.0 的 ShareAlike 条款，本仓库整体（含新增部分）同样以
+CC BY-NC-SA 4.0 发布，不得改为其他许可。
+
+依据 NonCommercial 条款，本作品不得用于商业目的。如需商用，须另行取得
+上游作者 chi111i 的许可。
+
+依据 Attribution 条款，再分发或改编时须保留本 NOTICE 与 LICENSE，并注明
+上游来源。
+
+四、免责声明
+
+本作品按"现状"提供，不附带任何明示或默示的担保。使用者应自行评估在学术
+诚信、所在机构规章及当地法律下的合规性，并自行承担使用后果。
+
+本作品不鼓励、不支持将 AI 生成内容冒充为人类原创作品。其正当用途是：
+作者本人撰写或已获授权的文本在检测中被误判时，改善行文使其更接近人类
+写作习惯。
