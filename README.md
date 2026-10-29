@@ -1,5 +1,8 @@
 # aigc-humanizer-skill
 
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+
 把 AI 写的文字改成"人写的"：逐段改写 + 双遍去痕，降低 GPTZero 等 AIGC 检测率，同时守住学术和技术文档的语体。
 
 这是一个 agent skill，适用于 Claude Code、Codex、WorkBuddy 等支持 `SKILL.md` 的 agent。
@@ -105,3 +108,5 @@ evals/
 规则与提示词来自 [chi111i/BypassAIGC](https://github.com/chi111i/BypassAIGC)，原作者以同一许可发布。详见 [NOTICE](NOTICE)。
 
 如果你要商用，需要先获得原作者许可。
+
+> 仓库侧边栏显示的许可是 "Other"，这是正常的。GitHub 的自动识别只覆盖 13 种 OSI 许可，不含 CC 的非商业系列，所以 CC BY-NC-SA 4.0 一律被判为 Other。以 `LICENSE` 文件的实际内容为准。
